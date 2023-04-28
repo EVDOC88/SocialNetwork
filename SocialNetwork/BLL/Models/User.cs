@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SocialNetwork.BLL.Models
+{
+    public class User //Уникальные свойства и параметры для определенной модели данных
+    {
+        public int Id { get; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public string Photo { get; set; }
+        public string FavoriteMovie { get; set; }
+        public string FavoriteBook { get; set; }
+
+        public IEnumerable<Message> IncomingMessages { get; }  // Список сообщений
+        public IEnumerable<Message> OutgoingMessages { get; }
+        public IEnumerable<User> Friends { get; set; } // Список друзей
+
+        public User( // Контсруктор профиля пользователя
+            int id,
+            string firstName,
+            string lastName,
+            string password,
+            string email,
+            string photo,
+            string favoriteMovie,
+            string favoriteBook,
+            IEnumerable<Message> incomingMessages,
+            IEnumerable<Message> outgoingMessages,
+            IEnumerable<User> friends
+            )
+        {
+            this.Id = id;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Password = password;
+            this.Email = email;
+            this.Photo = photo;
+            this.FavoriteMovie = favoriteMovie;
+            this.FavoriteBook = favoriteBook;
+            this.IncomingMessages = incomingMessages;
+            this.OutgoingMessages = outgoingMessages;
+            this.Friends = friends;
+        }
+    }
+}
