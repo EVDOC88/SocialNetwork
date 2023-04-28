@@ -32,7 +32,6 @@ namespace SocialNetwork.Tests
             userRepository.FindByEmail(userEntity.email);
             var result = userService.FindByEmail(userEntity.email);
 
-
             Assert.IsNotNull(result);
 
            
